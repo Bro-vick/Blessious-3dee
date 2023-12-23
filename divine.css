@@ -11,7 +11,7 @@
 }
 :root {
   --bg-color: #1f242d;
-  --second-bg-color: #323946;
+  --second-bg-color: #222325;
   /* --second-bg-color: lavender; */
   --text-color: #fff;
   --main-color: #0ef;
@@ -86,9 +86,19 @@ section {
     border-radius: 10%;
     box-shadow: 0 0 3rem var(--main-color);
     margin-left: 2rem;
-    
+    animation: floatImage 4s ease-in-out infinite;
 }
-
+@keyframes floatImage {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-2.4rem);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
 .home-content h3 {
     font-size: 3.2rem;
     font-weight: 700;
@@ -110,6 +120,8 @@ span {
 
 .home-content p {
     font-size: 1.6rem;
+    font-style: italic;
+
 }
 
 .social-media a {
@@ -136,10 +148,12 @@ span {
 .btn {
     display: inline-block;
     padding: 1rem 2.8rem;
-    background: var(--main-color);
+    /* background: var(--main-color); */
     border-radius: 4rem;
     font-size: 1.6rem;
-    color: var(--second-bg-color);
+    /* color: var(--second-bg-color); */
+    color: var(--main-color);
+    border: 1px solid;
     letter-spacing: .1rem;
     font-weight: 600;
     transition: .5s ease;
@@ -147,6 +161,8 @@ span {
 
 .btn:hover {
     box-shadow: 0 0 1rem var(--main-color);
+    background: var(--main-color);
+    color: var(--second-bg-color);
 }
 
 .about {
@@ -163,6 +179,7 @@ span {
     margin-right: 100px;
     border-radius: 10%;
     box-shadow: 0 0 3rem var(--main-color);
+    animation: floatImage 4s ease-in-out infinite;
 }
 
 .heading {
@@ -182,6 +199,10 @@ span {
 .about-content p {
     font-size: 1.6rem;
     margin: 2rem 0 3rem;
+    text-align: justify;
+}
+#fullContent {
+    display: none; /* Initially hide the full content */
 }
 
 .services h2 {
@@ -209,9 +230,18 @@ span {
     border-color: var(--main-color);
     transform: scale(1.02);
 }
+.services-box {
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 .services-box i {
-    font-size: 7rem;
+    font-size: 6rem;
     color: var(--main-color);
+}
+.services-box i:hover {
+    color: var(--second-bg-color);
 }
 
 .services-box h3 {
@@ -370,8 +400,38 @@ span {
         padding: 10rem 3% 2rem;
     }
 
+    .services {
+        padding-bottom: 7rem;  
+    }
+    .portfolio {
+        padding-bottom: 7rem;
+    }
+    .contact {
+        min-height: auto;
+    }
     .footer {
         padding: 2rem 3%;
+    }
+    .home {
+        flex-direction: column;
+    }
+    .home-content h3 {
+        font-size: 2.6rem;
+    }
+    .home-content h1 {
+        font-size: 5rem;
+    }
+    .home-img img {
+        width: 70vw;
+        margin-top: 4rem;
+    }
+    .about {
+        flex-direction: column-reverse;
+    }
+    .about img {
+        width: 70vw;
+        margin-top: 4rem;
+        margin-left: 12rem;
     }
 }
 @media (max-width: 768px) {
@@ -398,4 +458,88 @@ span {
         font-size: 2rem;
         margin: 3rem 0;
     }
+
+    .home {
+        flex-direction: column;
+    }
+    .home-content h3 {
+        font-size: 2.6rem;
+    }
+    .home-content h1 {
+        font-size: 5rem;
+    }
+    .home-img img {
+        width: 70vw;
+        margin-top: 4rem;
+    }
+    .about {
+        flex-direction: column-reverse;
+    }
+    .about img {
+        width: 70vw;
+        margin-top: 4rem;
+        margin-left: 12rem;
+    }
+    .services h2 {
+        margin-bottom: 3rem;
+    }
+
+    .portfolio h2 {
+        margin-bottom: 3rem;
+    }
+
+    .portfolio-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+} 
+@media  (max-width: 617px) {
+    .portfolio-container {
+        grid-template-columns: 1fr;
+    }
+}
+@media  (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+
+    .contact form .input-box input {
+        width: 100%;
+    }
+    .home-img img {
+        width: 70vw;
+        height: 50vh;
+    }
+
+    .about-img img {
+        width: 80vw;
+        height: 50vh;
+    }
+
+    .footer {
+        flex-direction: column-reverse;
+    }
+
+    .footer p {
+        text-align: center;
+        margin-top: 2rem;
+    }
+}
+@media  (max-width: 350px) {
+    .home-img img {
+        width: 90vw;
+    }
+
+    .about-img img {
+        width: 90vw;
+    }
+
+    .footer {
+        flex-direction: column-reverse;
+    }
+
+    .footer p {
+        text-align: center;
+        margin-top: 2rem;
+    }
+
 } 
