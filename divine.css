@@ -82,10 +82,11 @@ section {
 
 .home-img img {
     width: 30vw;
-    height: 50VH;
-    border-radius: 30%;
+    height: 60VH;
+    border-radius: 10%;
     box-shadow: 0 0 3rem var(--main-color);
     margin-left: 2rem;
+    
 }
 
 .home-content h3 {
@@ -160,7 +161,7 @@ span {
     width: 35vw;
     height: 60vh;
     margin-right: 100px;
-    border-radius: 30%;
+    border-radius: 10%;
     box-shadow: 0 0 3rem var(--main-color);
 }
 
